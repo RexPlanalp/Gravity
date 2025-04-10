@@ -47,17 +47,13 @@ double Universe::potentialEnergy(const std::shared_ptr<Particle> p1, const std::
     return - (p1->mass * p2->mass) / ((p1->position-p2->position).length());
 }
 
-double Universe::kineticEnergy(const std::shared_ptr<Particle> p)
-{
-    return 0.5 * p->mass * p->velocity.length_squared();
-}
 
 
-void Universe::dumpInitial()
+void Universe::dumpPositions(std::ostream& out)
 {
     for (int n = 0; n < N; n++)
     {
         std::clog << "Dumping particle: " << n + 1 << '\n' << std::flush;
-        std::cout << bodies[n]->position << '\n';
+        out << bodies[n]->position << '\n';
     }
 }

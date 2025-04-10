@@ -2,6 +2,7 @@
 #define PARTICLE_H
 
 #include "Vec3.h"
+#include <memory>
 
 class Particle
 {
@@ -15,5 +16,9 @@ class Particle
         double mass;
     
 };
+
+double kineticEnergy(const std::shared_ptr<Particle> p);
+
+
 
 #endif
